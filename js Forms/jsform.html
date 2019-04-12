@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+   <div>
+      <script>
+          function myValidation()
+          {
+			  var pass=document.forms["myForm"]["pass"].value;
+			  var conpass=document.forms["myForm"]["cpass"].value;
+			  var age=document.forms["myForm"]["ag"].value;
+			  if(!(pass==conpass))
+			  {
+			     alert("password mismatches !!!");
+			     return false;
+			  }
+			  else if(isNaN(age) || age>100 || age<18 )
+			  {
+			     document.getElementById('age').innerHTML='plz enter a valid age btw 18 to 100' ;
+			     document.getElementById('age').style.color="red";
+			     alert("invalid age");
+			     return false;
+			  }
+		  }
+      </script>
+      <form action="./formcontrollers" name="myForm" onsubmit="return myValidation()">
+         enter ur name : <input type="text" name="nam" /><br>
+         enter ur mail : <input type="email" name="mid" /><br>
+         <p id="age"></p>
+         enter ur age : <input type="number" name="ag" /><br>
+         enter password : <input type="password" name="pass" />
+         confirm password : <input type="text" name="cpass" /><br>
+         <input type="reset" value="clear" />
+         <button type="button" onclick="myValidation()">submit</button>
+      </form>
+   </div><hr>
+   <div>
+      <h3>the required attribute</h3>
+      <form action="./dsfd" name="myForm2" onsubmit="return autoValid()">
+          enter ur username : <input type="text" name="unm" required="required" /><br>
+          enter ur password : <input type="password" name="pass" /><br>
+          <input type="submit" value="validate" />
+          <input type="reset" value="clear" />
+      </form>
+   </div><hr>
+   <div>
+       <h3>Validation Api</h3>
+        <p id="msg1"></p>
+        <input id="val1" type="number" min="100" max="500" required="required" /><br>
+        <button onclick="validateByApi()">OK1</button><br>
+       <script>
+            function validateByApi()
+            {
+				var inp1 = document.getElementById('val1');
+				if(!inp1.checkValidity())
+				{
+				    document.getElementById('msg1').style.color='red';
+				    document.getElementById('msg1').innerHTML=inp1.validationMessage;
+				}
+				else
+				{
+				    document.getElementById('msg1').style.color='green' ;
+				    document.getElementById('msg1').innerHTML='input is valid' ;
+				}
+			}
+       </script>
+   </div><hr>
+   <div>
+        <h3>value undergo condition and error message</h3>
+        <p id="unmsg1"></p>
+        <script>
+           function validateUnderGo()
+           {
+              var msg="";
+			  var value1=document.getElementById('inum');
+			  if(value1.validity.rangeUnderflow)
+			  {
+			     msg="value is too small plz enter the number gretater than 500";
+			     document.getElementById('unmsg1').style.color='red';
+			     document.getElementById('unmsg1').style.fontSize='30px';
+			  }
+			  else
+			  {
+			     document.getElementById('unmsg1').style.fontSize='30px';
+			     msg="valid input ";
+			     document.getElementById('unmsg1').style.color='green';
+			  }
+			  document.getElementById('unmsg1').innerHTML=msg;
+		   }
+        </script>
+        enter a number : <input id="inum" type="number" min="500" />
+        <button type="button" onclick="validateUnderGo()">check</button>
+   </div><hr>
+   <div>
+       <h3>number Overflow check and error msg</h3>
+         <p id="emsg"></p>
+        <script>
+            function checkOverflow()
+            {
+                var msg;
+				var inputNum=document.getElementById('input1');
+				if(inputNum.validity.rangeOverflow)
+				{
+				   msg="no is too big , plz enter the number less than 500 ";
+				   document.getElementById('emsg').style.color="red";
+				   document.getElementById('emsg').style.fontSize='30px';
+				}
+				else
+				{
+				   msg="valid input";
+				   document.getElementById('emsg').style.color="green";
+				   document.getElementById('emsg').style.fontSize='30px';
+				}
+				document.getElementById('emsg').innerHTML=msg;
+			}
+        </script>
+          enter a number : <input id="input1" type="number" max="500" />
+             <button type="button" onclick="checkOverflow()">Check</button>
+   </div><hr>
+   <div>
+       <h3>example of under flow and over flow</h3>
+       <p id="done"></p>
+       <script>
+             function validityChecking()
+             {
+				var inpnum=document.getElementById('checknum');
+				var outmsg;
+				if(inpnum.validity.rangeUnderflow)
+				{
+				   outmsg="no is too small , expected greater than 300";
+				}
+				else if(inpnum.validity.rangeOverflow)
+				{
+				   outmsg="number is too large , expected less than 500";
+				}
+				else
+				{
+				   outmsg="perfect input";
+				}
+				document.getElementById('done').innerHTML=outmsg;
+			 }
+       </script>
+           enter a number : <input id="checknum" type="number" min="300" max="500" />
+           <button type="button" onclick="validityChecking()">Check number</button>
+   </div>
+</body>
+</html>
