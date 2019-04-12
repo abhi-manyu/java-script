@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+     <h2>this is the exampl eof the java script variables example</h2>
+<p>x=78, y=30</p>
+<p id="addition"></p>
+<script>
+   function addition()
+   {
+	 var x,y,yz;
+     x=78;
+     y=30;
+     z=x+y;
+     document.getElementById('addition').innerHTML=z;
+   }
+</script>
+<button type="button" onclick="addition()">add them</button>
+</div><hr>
+
+<div>
+   <p id="typ"></p>
+   <p id="typ2"></p>
+   <script>
+       function getOperator()
+       {
+           var x=15;
+           var String1='maharaja';
+		   document.getElementById('typ').innerHTML= typeof x ;
+		   document.getElementById('typ2').innerHTML= typeof String1 ;
+	   }
+   </script>
+   <button type="button" onclick="getOperator()">get Type</button>
+</div><hr>
+<div>
+     <p id="demo"></p>
+
+  <script>
+     var person = {
+        name : "maharaja",
+        age : 50
+     };
+     document.getElementById("demo").innerHTML =
+          person.name + " is " + person.age + " years old ";
+  </script>
+</div><hr>
+<div>
+    <script>
+    function getCarDetails() {
+    	var car={
+     		   name:"RangeROver",
+     		   colour:"black"
+        };
+    	document.getElementById('demo').innerHTML=car.name+' '+car.colour;
+	}
+    </script>
+    <button  type="button" onclick="getCarDetails()">getCar</button>
+    <p id="demo"></p>
+</div>
+</body>
+</html>
