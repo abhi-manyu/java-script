@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <div>
+      <h3>Event Listener</h3>
+        <button id="btm" type="button">click me</button>
+        <script>
+           /* var evl=document.getElementById("btm").addEventListener("mouseover",function(){
+           document.getElementById("demo").innerHTML="i m hovered by ur mouse"}) */
+           
+           var counter=0;
+           var elv=document.getElementById("btm");
+               elv.addEventListener("mouseover",mouseOver);
+               elv.addEventListener("click",mouseClick);
+               elv.addEventListener("mouseout",mouseOut);
+               
+               function mouseOver()
+               {
+				   document.getElementById("demo").innerHTML+="i m hovered by ur mouse<br>";
+			   }
+			   function mouseClick()
+			   {
+			        counter++;
+				    document.getElementById("demo").innerHTML+="i m "+counter+" clicked <br>";
+			   }
+			   function mouseOut()
+			   {
+				   document.getElementById("demo").innerHTML+="thank u come again<br>";
+			   }
+        </script>
+        <p id="demo"></p>
+  </div><hr>
+  
+  
+  
+  <div>
+       <button id="mybtn" type="button">calculate</button>
+      <script>
+            var num1=5,num2=10;
+            var nums=document.getElementById("mybtn");
+            nums.addEventListener("mouseover",addingNumber);
+            nums.addEventListener("click",subtractingNumber);
+            nums.addEventListener("mouseout",devidingNumber);
+            
+            function addingNumber()
+            {
+				add(num1,num2);
+			} 
+			function add(a,b)
+			{
+				res=a+b;
+				document.getElementById("result").innerHTML+="Addition  is "+res+"<br>";
+			}
+			function subtractingNumber()
+			{
+				subtract(num1,num2);
+			}
+			function subtract(a,b)
+			{
+				res=a-b;
+				document.getElementById("result").innerHTML+="subtraction is "+res+"<br>";
+			}
+			 function devidingNumber()
+			{
+				devide(num1,num2);
+			}
+			function devide(a,b)
+			{
+				res=a/b;
+				document.getElementById("result").innerHTML+="device result is "+res+"<br>";
+			}
+      </script>
+      <p id="result"></p>
+  </div>
+</body>
+</html>
