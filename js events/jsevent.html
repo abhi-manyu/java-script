@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <button style="background-color: green;" type="button" 
+         onclick="this.innerHTML='alredy clicked',
+                  this.style.backgroundColor='red'">click me
+    </button>
+   <div>
+      <script>
+           var counter=0;
+          function countClick()
+          {
+             counter++;
+			 document.getElementById('count').innerHTML=counter+' times clicked';
+		  }
+      </script>
+      <p id="count"></p>
+     <button type="button" onclick="countClick()">click</button>
+   </div>
+     <div>
+         <button type="button" 
+                 onmouseover="this.innerHTML='u shold click me'">click here</button>
+     </div>
+     <div>
+         <button type="button" onkeydown="this.innerHTML='u pressed a key' ">click here</button>
+     </div><hr>
+     
+     
+     <div>
+         <button type="button"
+         onclick="innerHTML='clicked' ">click me</button>
+     </div>
+</body>
+</html>
