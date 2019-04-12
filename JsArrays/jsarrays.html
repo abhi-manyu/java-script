@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+    function arrayDetails()
+    {
+		var Cars=["Audi","BMW"];
+    var length=Cars.length;
+    document.getElementById('arraydemo').innerHTML=length;
+	}
+</script>
+<button type="button" onclick="arrayDetails()">get LEngth</button>
+<p id="arraydemo"></p><hr>
+    <div>
+      <h3>example of array and for loop in java script</h3>
+        <script>
+        function fruitsList()
+        {
+			var frts = ["banana","apple","pine apple","grapes","berries"];
+		   var len=frts.length,i;
+           var output = "<ol>";
+           for(i = 0; i < len; i++)
+             {
+              output += "<li>" + frts[i] + "</li>";
+             }
+           output += "</ol>";
+           document.getElementById("arys").innerHTML=output;
+		}
+        </script>
+    <button type="button"
+        onclick="fruitsList(), this.innerHTML='listed' ">getList</button>
+    <p id="arys"></p>
+    </div><hr>
+    
+    
+    <div>
+    <h3>this is example of for each loop in java script</h3>
+        <script>
+        function getCarList()
+        {
+			var Cars=["BMW","AUDI","RangeROver","Porsche","Bently"];
+            var output="<ul>";
+               Cars.forEach(carLists);
+            output += "</ul>"
+            function carLists(car)
+            {
+				output += "<li>"+ car + "</li>";
+			}
+            document.getElementById('carlist').innerHTML=output;
+		}
+        </script>
+        <button type="button" onclick="getCarList(),this.innerHTML='already shown' ">see List</button>
+        <p id="carlist"></p>
+    </div><hr>
+    
+    
+    <div>
+       <h3>adding to the array example</h3>
+            <p id="list"></p>
+       <script>
+          var veich=["cars","bus","trucks","Autos",];
+			  var output="<ul>",i;
+			  for(i=0;i<veich.length;i++)
+			  {
+			     output += "<li>"+veich[i]+"</li>"
+			  }
+			  output += "</ul>"
+			  document.getElementById('list').innerHTML=output;
+          function addingToArray()
+          {
+			  veich.push("trains","Aeroplanes");
+			  var j, output2="<ol>";
+			  for(j=0;j<veich.length;j++)
+			  {
+			     output2 += "<li>" + veich[j] + "</li>";
+			  }
+			  output2 +="</ol>";
+			  document.getElementById('output').innerHTML=output2;
+			  
+		  }
+       </script>
+       <button type="button" onclick="addingToArray(), this.innerHTML='added to List' ">add Element</button>
+       <p id="output"></p>
+    </div>
+    
+    
+    <div>
+          <p id="lendemo"></p>
+         <script>
+             var ars=[];//creating new array in this way is better in java script.
+             ars.push("india","USA","Africa");
+             var length=ars.length;
+             document.getElementById('lendemo').innerHTML="the length of the array is : "+
+             length+"<br>"+ars;
+         </script>
+    </div><hr>
+    
+    
+    <div>
+          <p id="demo1"></p>
+          <p id="demo2"></p>
+         <script>
+             var array=["king","queen","prince","princess","general"];
+             document.getElementById('demo1').innerHTML="printing an array diretly----- "+array;
+             var array2=["king","queen","prince","princess","general"];
+             document.getElementById('demo2').innerHTML="printing array by toString method------ "+
+                      array2.toString();
+         </script>
+    </div><hr>
+    
+    
+    <div>
+         <p id="frt"></p>
+         <p id="frt2"></p>
+         <script>
+              var frts=[];
+              frts.push("mango","banana","pine apple","apple");
+              document.getElementById('frt').innerHTML="Bydefault printing----"+frts;
+              document.getElementById('frt2').innerHTML="By the join method------"+frts.join("-------")
+         </script>
+    </div><hr>
+    <div>
+         <h3>removing element in array</h3>
+         <p id="first"></p>
+         <p id="second"></p>
+         <p id="third"></p>
+         <p id="fourth"></p>
+         <p id="fivth"></p>
+         <p id="sixth"></p>
+         <p id="seventh"></p>
+         <p id="eight"></p>
+         <p id="nine"></p>
+         <script>
+             var arr=["apple"];
+             arr.push("pineapple");
+             document.getElementById('first').innerHTML=arr;
+             arr.push("banana");
+             document.getElementById('second').innerHTML=arr;
+             arr.pop();
+             document.getElementById('third').innerHTML=arr;
+             arr.push("coconut","grapes");
+             document.getElementById('fourth').innerHTML=arr;
+             arr.shift();
+             document.getElementById('fivth').innerHTML=arr;
+             arr.unshift("berries");
+             document.getElementById('sixth').innerHTML=arr;
+             delete arr[2];
+             document.getElementById('seventh').innerHTML=arr;
+             document.getElementById('eight').innerHTML=arr.length;
+         </script>
+    </div><hr>
+    
+    
+    <div>
+        <p id="foreachdemo"></p>
+        <p id="direct"></p>
+        <script>
+             var list="";
+             var numbers=["Abhi","King","Queen","Prince","Princess"];
+             numbers.forEach(byforEach);
+             document.getElementById("foreachdemo").innerHTML=list;
+             
+             function byforEach(value)
+             {
+				list+=value+"------"+typeof value+"<br>";
+			 }
+             document.getElementById("direct").innerHTML=numbers;
+        </script>
+    </div><hr>
+    
+    
+    <div>
+        <p id="numbs"></p>
+        
+        <script>
+            numbers=[4,3,1,23,21,6];
+            var sum=numbers.reduce(findTotal)
+            function findTotal(total,value)
+            {
+            	return total+value;
+			}
+            document.getElementById("numbs").innerHTML=sum;
+        </script>
+    </div>
+</body>
+</html>

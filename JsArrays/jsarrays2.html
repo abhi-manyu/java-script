@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<h3>adding element by splice method without deleting element</h3>
+		<p id="first"></p>
+		<p id="second"></p>
+		<p id="third"></p>
+		<p id="fourth"></p>
+		<script>
+		var arr=["apple","banana","grapes","mango"];
+         document.getElementById('first').innerHTML=arr;
+         document.getElementById('third').innerHTML="the orginal length is : "+arr.length;
+		function addBySplice()
+		{
+         arr.splice(2,0,"AUDI","BMW");
+         document.getElementById('second').innerHTML=arr;
+         document.getElementById('fourth').innerHTML="the new length is : "+arr.length;
+		}
+        </script>
+        <button type="button" onclick="addBySplice(),
+        this.innerHTML='added' ">add By Splice</button>
+	</div><hr>
+	<div>
+	   <h3>adding element by splice method by deleting element</h3>
+	   <p id="one"></p>
+	   <p id="two"></p>
+	   <p id="three"></p>
+	   <p id="four"></p>
+	   <p id="five"></p>
+	   <p id="six"></p>
+	   <p id="seven"></p>
+	   <script>
+	        var arr2=[];
+	        arr2.push("AUDI","BMW","RANGE ROVER","PORSCHE","JAGUAR");
+	        document.getElementById('one').innerHTML="the old list is : "+arr2;
+	        document.getElementById('two').innerHTML="the old length is : "+arr2.length;
+	        function addBySplice()
+	        {
+			  arr2.splice(1,2,"Apple","banana","Mango");
+	          document.getElementById('three').innerHTML="the new list is : "+arr2;
+	          document.getElementById('four').innerHTML="the new length is : "+arr2.length;
+			}
+			function deleteBySplice()
+			{
+			   var x=arr2.splice(2,3);
+			   document.getElementById('five').innerHTML="the updated list is : "+arr2;
+			   document.getElementById('six').innerHTML="the new length is : "+arr2.length
+			   document.getElementById('seven').innerHTML=x;
+			}
+	   </script>
+	   <button type="button" onclick="addBySplice(),
+	     this.innerHTML='addedBySplice' ">addBySplice</button>
+	     <button type="button" onclick="deleteBySplice()">delete By Splice</button>
+	</div><hr>
+	<div>
+	   <h3>array string sortings</h3>
+	     <p id="elev"></p>
+	     <p id="twel"></p>
+	    <script>
+	        var names=[];
+	        names.push("raja","rani","prince","General","Soldiers");
+	        document.getElementById('elev').innerHTML=names;
+	        function arrSorting()
+	        {
+			   names.sort();
+	           document.getElementById('twel').innerHTML="after sorting : "+names;
+			}
+	    </script>
+	    <button type="button" onclick="arrSorting(), this.innerHTML=
+	       'sorted' ">Sort Array</button>
+	</div><hr>
+	<div>
+	     <h3>reverse string sorting in array</h3>
+	     <p id="thirt"></p>
+	     <p id="fourt"></p>
+	     <p id="fivt"></p>
+	     <script>
+	         var cars=["Bmw","Audi","RangeRover","Porsche","RollsRoyce","Bently"];
+	         document.getElementById('thirt').innerHTML="before sorting : "+cars;
+	         function sortCars()
+	         {
+				 cars.sort();
+				 document.getElementById('fourt').innerHTML="after sorting : "+cars;
+			 }
+			 function sortReverseCar()
+			 {
+				  cars.reverse();
+				  document.getElementById('fivt').innerHTML="only reverse : "+cars;
+			 }
+	     </script>
+	     <button type="button" onclick="sortCars()">sort Cars</button>
+	     <button type="button" onclick="sortReverseCar()">only Reverse</button>
+	</div><hr>
+	<div>
+	    <h3>integer sorting in array</h3>
+	    <p id="int1"></p>
+	    <p id="int2"></p>
+	    <p id="int3"></p>
+	    <p id="int4"></p>
+	    <p id="int5"></p>
+	    <script>
+	         var myint=[5,52,15,64,89,185,156];
+	         document.getElementById('int1').innerHTML=myint;
+	         function sortInt()
+	         {
+				 myint.sort(function(a, b){return a-b});
+				 document.getElementById('int2').innerHTML="sorted int : "+myint;
+			 }
+	    </script>
+	    <button type="button" onclick="sortInt()">sort Int</button>
+	</div>
+</body>
+</html>
