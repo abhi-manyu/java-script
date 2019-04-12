@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+     <p id="str"></p>
+   <script>
+       var string1="we are so called";
+       var string2=string1+"\"viking\"here";
+       document.getElementById('str').innerHTML=string2;
+   </script>
+</div><hr>
+
+  <div>
+  <script>
+      function lightOn()
+      {
+		 document.getElementById('light').src='images/light on.jpg';
+		 document.getElementById('light').height=300;
+		 document.getElementById('light').width=300;
+		 //document.getElementById('light').style.background-color='black';
+	  }
+	  function lightOff()
+      {
+		 document.getElementById('light').src='images/light off.jpg';
+		 document.getElementById('light').height=300;
+		 document.getElementById('light').width=200;
+	  }
+  </script>
+     <img id="light" alt="light off image" src="images/light off.jpg" width="200" height="300">
+     <button type="button" onclick="lightOn()">light On</button>
+     <button type="button" onclick="lightOff()">light Off</button>
+  </div>
+</body>
+</html>
