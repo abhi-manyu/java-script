@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+   <div>
+   <h3>getting the elements by the tag name</h3>
+      <p>Hello i m <mark>first</mark> paragraph</p>
+      <p>Hello i m <mark>second</mark> paragraph</p>
+      <p id="demo1"></p>
+      <p id="demo2"></p>
+       <script>
+            var paras=document.getElementsByTagName('p');
+            document.getElementById('demo1').innerHTML="first element is : "+paras[0].innerHTML;
+            document.getElementById('demo2').innerHTML="second element is : "+paras[1].innerHTML;
+       </script>
+   </div><hr>
+   <div>
+       <div id="main">
+           <p>this is <mark>first</mark> para</p>
+           <p>this is <mark>second</mark> para</p>
+           <h3>this is the first heading</h3>
+           <h3>this is the second heading</h3>
+		</div>
+		   <p id="classic"></p>
+		   <p id="morden"></p>
+       <script>
+           var allel = document.getElementById('main');
+           var hdel=allel.getElementsByTagName('h3');
+           document.getElementById('classic').innerHTML="first element is : "+hdel[0].innerHTML;
+           document.getElementById('morden').innerHTML="first element is : "+hdel[1].innerHTML;
+       </script>
+   </div><hr>
+   <div>
+       <h3>finding html elements by the css selectors</h3>
+       <h2 id="head1">this heading can be changed by clicking bellow button</h2>
+       <button type="button" onclick="document.getElementById('head1').style.color='red',
+        this.innerHTML='i changed the color',document.getElementById('head1').style.fontFamily=
+          'cursive' ">
+       click me</button>
+   </div>
+</body>
+</html>
